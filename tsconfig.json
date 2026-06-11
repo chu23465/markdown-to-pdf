@@ -3,11 +3,12 @@
     // Environment setup & latest features
     "target": "ESNext", //Replace with ES2022 if needed
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "module": "Preserve",
+    "module": "preserve", // system, amd
     "moduleDetection": "force",
     "jsx": "react-jsx",
     "allowJs": true,
     "types": ["bun"],
+    //"moduleResolution": "node16", // node10, bundler
 
     // Bundler mode
     //"moduleResolution": "bundler",

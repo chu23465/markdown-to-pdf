@@ -24,6 +24,9 @@
       width: max-content; 
       //Stretches out otherwise
     }
+    body {
+      background-color: #0d1117;
+    }
   </style>
   <link rel="stylesheet" href="github.button.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.css" integrity="sha512-Hasfm7Iv5AG2/v5DSRXetpC33VjyPBXn5giooMag2EgSbiJ2Xp4GGvYGKSvc68SiJIflF/WrbDFdNmtlZHE5HA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -33,7 +36,8 @@
     <input type="file" id="fileInput" accept=".md" hidden>
     <button type="button" class="buttonwithCSS" id="uploadBtn">Choose Markdown File</button>
   </div>
-  <script src="index.ts"></script>
   <article class="markdown-body" id="markdown-body"></article>
+  <script src="index.ts"></script>
+  <!-- Script at the end otherwise it doesn't detect all elements-->
 </body>
 </html>

@@ -12,6 +12,7 @@
   },
   "scripts": {
     "devDebug": "gts fix && bun run ./debug.html",
+    "debugBundle": "bun build --keep-names --target=browser --format=cjs --reject-unresolved --outfile=./build/index.js ./index.ts",
     "bundle": "rm -f ./build/index.js && gts fix && tsc --noEmit && bun build --production --outfile=./build/index.js ./index.ts",
     "prodTest": "bun run compile && bun run ./build/index.html",
     "lint": "gts lint",
