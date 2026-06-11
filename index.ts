@@ -1,5 +1,18 @@
 import {markdownToHTML} from '@nick/comrak';
 
+const element = document.getElementById('markdown-body');
+
+if (element) {
+  const bgColor = window.getComputedStyle(element).backgroundColor;
+  document.documentElement.style.backgroundColor = bgColor;
+}
+
+(
+  document.getElementById('uploadBtn') as HTMLButtonElement | null
+)?.addEventListener('click', () => {
+  (document.getElementById('fileInput') as HTMLInputElement | null)?.click();
+});
+
 const fileInput = document.getElementById('fileInput') as HTMLInputElement;
 
 fileInput.addEventListener('change', () => {

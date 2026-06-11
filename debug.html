@@ -2,17 +2,37 @@
 <html>
 <head>
   <style>
+    .inputDiv {
+      box-sizing: border-box;
+      max-width: fit-content;
+      //padding: 15px;
+      margin: 1% 0;
+    } 
     .markdown-body {
       box-sizing: border-box;
       max-width: 980px;
       margin: 0 auto;
       padding: 45px;
+      border: .0625rem solid;
+      border-radius: .375rem;
+      border-color: #3d444d;
+      flex-direction: column;
+      flex-grow: 1;
+      display: flex;
+    }
+    .markdown-body img {
+      width: max-content; 
+      //Stretches out otherwise
     }
   </style>
+  <link rel="stylesheet" href="github.button.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.css" integrity="sha512-Hasfm7Iv5AG2/v5DSRXetpC33VjyPBXn5giooMag2EgSbiJ2Xp4GGvYGKSvc68SiJIflF/WrbDFdNmtlZHE5HA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <input type="file" id="fileInput" accept=".md">
+  <div id="inputDiv" class="inputDiv">
+    <input type="file" id="fileInput" accept=".md" hidden>
+    <button type="button" class="buttonwithCSS" id="uploadBtn">Choose Markdown File</button>
+  </div>
   <script src="index.ts"></script>
   <article class="markdown-body" id="markdown-body"></article>
 </body>
