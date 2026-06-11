@@ -1,8 +1,6 @@
 import {markdownToHTML} from '@nick/comrak';
 
-const fileInput = (await document.getElementById(
-  'fileInput',
-)) as HTMLInputElement;
+const fileInput = document.getElementById('fileInput') as HTMLInputElement;
 
 fileInput.addEventListener('change', () => {
   const fileList: FileList | null = fileInput.files;
