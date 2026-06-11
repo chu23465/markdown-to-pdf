@@ -34,7 +34,7 @@ jobs:
       - name: Install Comrak WASM
         run: bunx jsr install @nick/comrak
       - name: Make index.html
-        run: sed 's|<script src="index\.ts"></script>|<script src="index.js"></script>|' debug.html > build/index.html && cp github.button.css ./build/github.button.css
+        run: mkdir build && sed 's|<script src="index\.ts"></script>|<script src="index.js"></script>|' debug.html >> ./build/index.html && cp github.button.css ./build/github.button.css
       - name: Install dependencies
         run: bun install
       - name: Run bundle script
