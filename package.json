@@ -1,0 +1,30 @@
+{
+  "name": "markdowntopdf",
+  "module": "index.ts",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^22.19.20",
+    "gts": "^7.0.0",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "scripts": {
+    "devDebug": "gts fix && bun run ./debug.html",
+    "prodRun": "bun run compile && bun run ./index.html",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "precompile": "gts fix",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm.cmd run compile",
+    "pretest": "npm.cmd run compile",
+    "posttest": "npm.cmd run lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "private": true,
+  "dependencies": {
+    "@nick/comrak": "npm:@jsr/nick__comrak@^0.48.0-rc.0"
+  }
+}
