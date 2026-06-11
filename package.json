@@ -12,7 +12,8 @@
   },
   "scripts": {
     "devDebug": "gts fix && bun run ./debug.html",
-    "prodRun": "bun run compile && bun run ./index.html",
+    "bundle": "gts fix && tsc --noEmit && bun build --production --outfile=./build/index.js ./index.ts",
+    "prodTest": "bun run compile && bun run ./index.html",
     "lint": "gts lint",
     "clean": "gts clean",
     "precompile": "gts fix",
