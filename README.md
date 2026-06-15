@@ -1,15 +1,20 @@
 # Markdown to PDF converter
 
-<!--- [![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg)](https://github.com/google/gts)--->
-
 ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=black&labelColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![WebAssembly](https://img.shields.io/badge/webassembly-%23654FF0.svg?style=for-the-badge&logo=webassembly&logoColor=white)
-![Bun](https://img.shields.io/badge/Bun-%23000000.svg?style=for-the-badge&logo=bun&logoColor=white&labelColor=ff73a8&color=ff73a8)
+![Bun](https://img.shields.io/badge/Bun-%23000000.svg?style=for-the-badge&logo=bun&logoColor=white&labelColor=ff73a8&color=gray)
+[![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg?style=for-the-badge)](https://github.com/google/gts)
 
 
 
-Convertes a Markdown string/file to HTML using [`comrak-wasm`](https://github.com/nberlette/comrak-wasm), styles using [`GitHub Markdown CSS`](https://github.com/sindresorhus/github-markdown-css). Automatically lints to [`Google TypeScript`](https://google.github.io/styleguide/tsguide.html) standard using [`gts`](https://github.com/google/gts).
+Converts a Markdown string/file to HTML using [`comrak-wasm`](https://github.com/nberlette/comrak-wasm), styles using [`GitHub Markdown CSS`](https://github.com/sindresorhus/github-markdown-css). Automatically lints pushed code to [`Google TypeScript`](https://google.github.io/styleguide/tsguide.html) standard using [`gts`](https://github.com/google/gts).
+
+
+Requirements:
+
+- [Bun](https://bun.com)
+
 
 To run locally, first clone the repository:
 
