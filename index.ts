@@ -82,3 +82,44 @@ fileInput.addEventListener('change', () => {
     reader.readAsText(file);
   }
 });
+
+function printElement(elementId: string): void {
+  const printElement = document.getElementById(elementId);
+  if (!printElement) return;
+
+  // 1. Create an isolated print window
+  const printWindow = window.open('', '_blank', 'height=600,width=800');
+  if (!printWindow) return;
+
+  printWindow.document.write('<html><head><title>Print PDF</title>');
+
+  // 2. FORWARD ALL ACTIVE STYLESHEETS TO THE NEW WINDOW
+  document.querySelectorAll('link[rel="stylesheet"], style').forEach((styleNode) => {
+    printWindow.document.write(styleNode.outerHTML);
+  });
+
+  // 3. FORCE BACKGROUND GRAPHICS IN CSS
+  printWindow.document.write(`
+    <style>
+      @media print {
+        body {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+      }
+    </style>
+  `);
+
+  printWindow.document.write('</head><body>');
+  printWindow.document.write(printElement.innerHTML);
+  printWindow.document.write('</body></html>');
+  
+  printWindow.document.close();
+  printWindow.focus();
+
+  // Give external fonts and asset URLs a moment to load before firing
+  setTimeout(() => {
+    printWindow.print();
+    printWindow.close();
+  }, 500);
+}
