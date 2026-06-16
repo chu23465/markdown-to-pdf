@@ -13,7 +13,8 @@
   "scripts": {
     "devDebug": "gts fix && bun run ./debug.html",
     "debugBundle": "bun build --keep-names --target=browser --format=cjs --reject-unresolved --outfile=./build/index.js ./index.ts",
-    "bundle": "mkdir -p build && sed 's|<script src=\"index\\.ts\"></script>|<script src=\"index\\.js\"></script>|' debug.html >> ./build/index.html && cp github.button.css ./build/github.button.css && gts fix && tsc --noEmit && bun build --production --outfile=./build/index.js ./index.ts",
+    "bundle": "gts fix && bun run make.ts && tsc --noEmit && bun build --production --minify --outfile=./build/index.js ./index.ts",
+    "anotherBundle": "bun build --target=browser --production --minify --outdir=./build2/ debug.html",
     "prodTest": "bun run bundle && bun run ./build/index.html",
     "lint": "gts lint",
     "clean": "gts clean",
