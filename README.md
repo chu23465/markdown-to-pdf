@@ -7,6 +7,8 @@
 [![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg?style=for-the-badge)](https://github.com/google/gts)
 
 
+The simplest Markdown To PDF Converter you've ever seen. No unnecessary frameworks, no BS, definitely no React. Website is ~370 KB gzip compressed. 
+
 
 Converts a Markdown string/file to HTML using [`comrak-wasm`](https://github.com/nberlette/comrak-wasm), styles using [`GitHub Markdown CSS`](https://github.com/sindresorhus/github-markdown-css). Automatically lints pushed code to [`Google TypeScript`](https://google.github.io/styleguide/tsguide.html) standard using [`gts`](https://github.com/google/gts).
 
