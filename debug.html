@@ -2,15 +2,24 @@
 <html>
 <head>
   <style>
+    body {
+      background-color: #0d1117;
+    }
     .inputDiv {
       box-sizing: border-box;
       max-width: fit-content;
       //padding: 15px;
       margin: 1% 0;
+      display: flex;
+      flex-direction: row;
     } 
+    #pdfGen {
+      margin-left: 6%;
+    }
     .markdown-body {
       box-sizing: border-box;
-      max-width: 980px;
+      max-width: 1200px;
+      //max-width: auto;
       margin: 0 auto;
       padding: 45px;
       border: .0625rem solid;
@@ -24,8 +33,51 @@
       width: max-content; 
       //Stretches out otherwise
     }
-    body {
-      background-color: #0d1117;
+    //# Print styles come last due to linear ie sequential parsing of css
+    @media print {
+      #header None,
+      #footer None,
+      #nav {
+        display: none !important;
+      }
+    }
+    @media print {
+      body {
+        background-color: white;
+      }
+      #nav {
+        display: none !important;
+      }
+      .inputDiv {
+        display: none !important;
+      }
+      .markdown-body {
+        border: none;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        break-after: auto;
+        break-before: auto;
+        //break-inside: avoid-region;
+      }
+    }
+    @page {
+      size: a4;
+      margin-top: 0.44in;
+      margin-bottom: 0.3in;
+      margin-right: 0;
+      margin-left: 0;
+
+    }
+    @page :first {
+      size: a4;
+      margin-top: 0;
+      margin-bottom: 0.3in;
+      margin-right: 0;
+      margin-left: 0;
     }
   </style>
   <link rel="stylesheet" href="github.button.css" />
@@ -35,6 +87,7 @@
   <div id="inputDiv" class="inputDiv">
     <input type="file" id="fileInput" accept=".md" hidden>
     <button type="button" class="buttonwithCSS" id="uploadBtn" aria-label="Choose Markdown File">Choose Markdown File</button>
+    <button type="button" class="buttonwithCSS" id="pdfGen" aria-label="Generate PDF">Generate PDF</button>
   </div>
   <article class="markdown-body" id="markdown-body"></article>
   <script src="index.ts"></script>
