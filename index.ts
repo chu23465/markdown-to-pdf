@@ -1,44 +1,55 @@
 import {markdownToHTML} from '@nick/comrak';
 
 import.meta.hot.accept();
+
 // I know a lot of this is just cursed. Apologies.
-//This specfic function created with AI
-function addPrintStyle(cssString) {
+// This specfic function created with AI
+
+function addPrintStyle(cssString: string) {
   const style = document.createElement('style');
   style.type = 'text/css';
   style.media = 'print'; // Target print media only
   style.appendChild(document.createTextNode(cssString));
   document.head.appendChild(style);
 }
-var scheme = "dark";
-for (var i = 0; i < document.styleSheets.length; i++) {
-  for (var j = 0; j < document.styleSheets[i].rules.length; j++) {
-    if (document.styleSheets[i].rules[j].conditionText === `(prefers-color-scheme: ${scheme})`) {
-      darkmodecss = document.styleSheets[i].rules[j].cssText.replace(`(prefers-color-scheme: ${scheme})`, "print").replace(`, [data-theme="${scheme}"]`, "");
-      addPrintStyle(darkmodecss);
-      break;
+const scheme = 'dark';
+const stylesArray: StyleSheetList = document.styleSheets as StyleSheetList;
+
+for (let i = 0; i < stylesArray.length; i++) {
+  for (let j = 0; j < (stylesArray[i] as CSSStyleSheet).rules.length; j++) {
+    if ('media' in ((stylesArray[i] as CSSStyleSheet).rules[j] as CSSRule)) {
+      const tempCSSRule: CSSMediaRule = (stylesArray[i] as CSSStyleSheet).rules[
+        j
+      ] as CSSMediaRule;
+      if (tempCSSRule.conditionText === `(prefers-color-scheme: ${scheme})`) {
+        const themeCSS: string = tempCSSRule.cssText
+          .replace(`(prefers-color-scheme: ${scheme})`, 'print')
+          .replace(`, [data-theme="${scheme}"]`, '');
+        addPrintStyle(themeCSS);
+        break;
+      }
     }
   }
 }
-var hasFile: bool = false;
-var alerted: bool = false;
-var printed: bool = false;
 
-var darkmodecss;
+let hasFile: boolean = false;
+let alerted: boolean = false;
+let printed: boolean = false;
+
 (
   document.getElementById('pdfGen') as HTMLButtonElement | null
-)?.addEventListener('click', (event) => {
+)?.addEventListener('click', event => {
   (event as Event).preventDefault(); // Necessary
   alerted = false;
-  if (hasFile && !printed) { 
+  if (hasFile && !printed) {
     printed = true;
     window.print();
-  } 
-  else { if (!alerted) {
-    alert("Please select a file"); 
-    alerted = true; 
-
-  }}
+  } else {
+    if (!alerted) {
+      alert('Please select a file');
+      alerted = true;
+    }
+  }
 });
 
 (
