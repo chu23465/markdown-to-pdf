@@ -1,7 +1,7 @@
 import html from './debug.html' with {type: 'text'};
 import {mkdir, rm} from 'node:fs/promises';
 
-const css = await Bun.file('./github.button.css').text();
+const css = await Bun.file('./page.css').text();
 const projectFolder = new URL('./build/', import.meta.url);
 
 try {
@@ -16,9 +16,9 @@ try {
   );
 
   await Bun.write('./build/index.html', newhtml);
-  await Bun.write('./build/github.button.css', css as unknown as string);
+  await Bun.write('./build/page.css', css as unknown as string);
 
-  console.log('Created index.html and github.button.css');
+  console.log('Created index.html and page.css');
 } catch (err) {
   console.error((err as Error).message);
 }
