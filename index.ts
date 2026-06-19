@@ -41,6 +41,7 @@ let printed: boolean = false;
 )?.addEventListener('click', event => {
   (event as Event).preventDefault(); // Necessary
   alerted = false;
+  printed = false;
   if (hasFile && !printed) {
     printed = true;
     window.print();
