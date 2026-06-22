@@ -36,3 +36,4 @@ build
 build2
 build/index.js
 build/index.html
+vfs-data.ts

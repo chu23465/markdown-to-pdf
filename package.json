@@ -20,6 +20,7 @@
     "clean": "gts clean",
     "precompile": "gts fix",
     "compile": "tsc",
+    "makeExe": "bun run bundle && bun run makevfs.ts && bun build ./server.ts --compile --outfile ./build/static",
     "fix": "gts fix",
     "prepare": "bun run compile",
     "pretest": "bun run compile",
