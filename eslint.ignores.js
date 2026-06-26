@@ -1,1 +1,1 @@
-module.exports = ['build/', 'vfs-data.d.ts'];
+module.exports = ['build/', 'vfs-data.d.ts', 'node_modules'];

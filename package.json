@@ -11,7 +11,7 @@
     "typescript": "^5"
   },
   "scripts": {
-    "devDebug": "gts fix && bun run ./debug.html",
+    "devDebug": "gts fix && bun run ./debug.html --port=4000",
     "debugBundle": "bun build --keep-names --target=browser --format=cjs --reject-unresolved --outfile=./build/index.js ./index.ts",
     "bundle": "gts fix && bun run make.ts && tsc --noEmit && bun build --production --minify --target=browser --outfile=./build/index.js ./index.ts",
     "anotherBundle": "bun build --target=browser --production --minify --outdir=./build2/ debug.html",

@@ -41,8 +41,6 @@ if (savedTheme) {
   switchToTheme('dark');
 }
 
-// I know a lot of this is just cursed. Apologies.
-
 function removeLastPrintStyle() {
   const headNodes: HTMLCollection = document.head.children;
   for (let i = 0; i < headNodes.length; i++) {
@@ -57,8 +55,9 @@ function addStyle(cssString: string, mediaString: string | null) {
   const style = document.createElement('style');
   style.type = 'text/css';
   if (mediaString) {
+    // Target print media only
     style.media = mediaString;
-  } // Target print media only
+  }
   style.appendChild(document.createTextNode(cssString));
   document.head.appendChild(style);
 }

@@ -7,10 +7,13 @@
 [![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg?style=for-the-badge)](https://github.com/google/gts)
 
 
-The simplest Markdown To PDF Converter you've ever seen. No unnecessary frameworks, no BS, definitely no React. Website is ~370 KB gzip compressed. 
+The simplest Markdown To PDF Converter you've ever seen. No unnecessary frameworks, no BS, no fucking API calls, definitely no React. Website is ~370 KB gzip compressed. 
 
 
-Converts a Markdown string/file to HTML using [`comrak-wasm`](https://github.com/nberlette/comrak-wasm), styles using [`GitHub Markdown CSS`](https://github.com/sindresorhus/github-markdown-css). Automatically lints pushed code to [`Google TypeScript`](https://google.github.io/styleguide/tsguide.html) standard using [`gts`](https://github.com/google/gts).
+Woprking - Converts a Markdown string/file to HTML using [`comrak-wasm`](https://github.com/nberlette/comrak-wasm), styles using [`GitHub Markdown CSS`](https://github.com/sindresorhus/github-markdown-css). 
+
+
+Automatically lints pushed code to [`Google TypeScript`](https://google.github.io/styleguide/tsguide.html) standard using [`gts`](https://github.com/google/gts).
 
 
 Requirements:
@@ -21,7 +24,7 @@ Requirements:
 To run locally, first clone the repository:
 
 ```bash
-git clone https://github.com/chu23465/markdown-to-pdf
+git clone --depth 1 https://github.com/chu23465/markdown-to-pdf
 ```
 
 Then, to install dependencies:
@@ -65,3 +68,7 @@ Scripts:-
 
 
 This project was created using `bun init`. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+
+> [!WARNING]
+> There is some absolutely cursed behavior in `index.ts`. Stay away for the sake of your sanity.
+
