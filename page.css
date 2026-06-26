@@ -1,117 +1,89 @@
+/*
+@media (prefers-color-scheme: light) {
+  .buttonwithCSS, [data-theme="light"] {
+    color: rgb(37, 41, 46);
+    background-color: rgb(246, 248, 250);
+    border-color: rgb(209, 217, 224);
+    box-shadow: rgba(31, 35, 40, 0.04) 0px 1px 0px 0px;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .buttonwithCSS, [data-theme="dark"] {
+    color: rgb(240, 246, 252);
+    background-color: rgb(33, 40, 48);
+    border-color: rgb(61, 68, 77);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  }
+}
+*/
+body {
+  background-color: var(--bgColor-default);
+  --fontFamily: "Mona Sans VF", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
 .buttonwithCSS {
   align-items: center;
   appearance: none;
   background-color: rgb(33, 40, 48);
-  block-size: 32px;
-  border-block-end-color: rgb(61, 68, 77);
-  border-block-end-style: solid;
-  border-block-end-width: 1px;
-  border-block-start-color: rgb(61, 68, 77);
-  border-block-start-style: solid;
-  border-block-start-width: 1px;
-  border-bottom-color: rgb(61, 68, 77);
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-end-end-radius: 6px;
-  border-end-start-radius: 6px;
-  border-inline-end-color: rgb(61, 68, 77);
-  border-inline-end-style: solid;
-  border-inline-end-width: 1px;
-  border-inline-start-color: rgb(61, 68, 77);
-  border-inline-start-style: solid;
-  border-inline-start-width: 1px;
-  border-left-color: rgb(61, 68, 77);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-right-color: rgb(61, 68, 77);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-start-end-radius: 6px;
-  border-start-start-radius: 6px;
-  border-top-color: rgb(61, 68, 77);
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  border-top-style: solid;
-  border-top-width: 1px;
+  border-color: rgb(61, 68, 77);
+  border-width: 1px;
+  border-radius: 6px;
+  border-style: solid;
   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;
-  caret-color: rgb(240, 246, 252);
   color: rgb(240, 246, 252);
-  column-gap: 8px;
-  column-rule-color: rgb(240, 246, 252);
   display: flex;
   font-weight: 500;
-  font-family: "Mona Sans VF", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: var(--fontFamily);
   font-size: 14px;
   height: 32px;
-  inline-size: 84.7344px;
   justify-content: space-between;
   min-block-size: auto;
   min-height: auto;
   min-inline-size: max-content;
-  min-width: max-content;
   outline-color: rgb(240, 246, 252);
   padding-block-end: 0px;
   padding-block-start: 0px;
   padding-bottom: 0px;
-  padding-inline-end: 12px;
-  padding-inline-start: 12px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 0px;
-  perspective-origin: 42.3594px 16px;
-  row-gap: 8px;
-  row-rule-color: rgb(240, 246, 252);
-  text-decoration-color: rgb(240, 246, 252);
-  text-emphasis-color: rgb(240, 246, 252);
-  transform-origin: 42.3672px 16px;
   transition-behavior: normal, normal, normal, normal;
   transition-delay: 0s, 0s, 0s, 0s;
   transition-duration: 0.08s, 0.08s, 0.08s, 0.08s;
   transition-property: color, fill, background-color, border-color;
   transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1), cubic-bezier(0.65, 0, 0.35, 1), cubic-bezier(0.65, 0, 0.35, 1), cubic-bezier(0.65, 0, 0.35, 1);
   user-select: none;
-  width: 84.7344px;
-  -webkit-text-fill-color: rgb(240, 246, 252);
-  -webkit-text-stroke-color: rgb(240, 246, 252);
-  --region-order-content: 2;
-  --pane-width-large: 100%;
-  --pane-width-custom: 0;
-  --region-order-footer: 4;
-  --spacing-normal: 1rem;
-  --spacing-divider: 0;
-  --spacing: 1rem;
-  --offset-header: 0;
-  --pane-width-small: 100%;
-  --region-order-header: 0;
-  --spacing-none: 0;
-  --spacing-condensed: 1rem;
-  --pane-min-width: 0;
-  --spacing-column: 0;
-  --region-order-pane-end: 3;
-  --pane-width-size: 0;
-  --pane-max-width-diff: 511px;
-  --pane-width-medium: 100%;
-  --pane-max-width: 0;
-  --sidebar-max-width-diff: 256px;
-  --region-order-pane-start: 1;
-  --pane-width: 0;
-  --spacing-row: 0;
 }
-body {
-  background-color: var(--bgColor-default, rgb(13, 17, 23));
+nav ol {
+  list-style-type: none;
+  padding: none;
+  margin: none;
+
 }
-#pdfGen {
-  margin-left: 6%;
+nav ol>li {
+  padding: 0.1in 0.2in 0.2in 0.1in;
+  float: left;
+  font-family: var(--fontFamily);
+  color: rgb(240, 246, 252);
+
 }
+nav {
+  top: 0;
+  left: 0;
+  margin: none;
+  padding: none;
+  width: 100%;
+  position: fixed;
+  background-color: #010409;
+}
+
+
 .inputDiv {
-  box-sizing: border-box;
-  max-width: fit-content;
+  justify-content: center;
   /* padding: 15px; */
-  margin: 1% 0;
   display: flex;
   flex-direction: row;
+  margin: 1% 1%;
+  gap: 1%;
 } 
 .markdown-body img {
   width: max-content; 
@@ -128,6 +100,8 @@ body {
     flex-direction: column;
     flex-grow: 1;
     display: flex;
+    background-color: var(--bgColor-default);
+    border-color: var(--borderColor-default);
   }
   .inputDiv {
     padding-top: 1.5%;
@@ -151,12 +125,8 @@ body {
     flex-grow: 1;
     display: flex;
     font-size: 16px;
-  }
-  .buttonwithCSS {
-    font-size: 14px;
-  }
-  #nav {
-    display: none !important;
+    background-color: var(--bgColor-default);
+    border-color: var(--borderColor-default);
   }
 }
 
@@ -174,24 +144,15 @@ body {
     flex-grow: 1;
     display: flex;
     font-size: 16px !important;
+    background-color: var(--bgColor-default);
+  }
+  .markdown-body pre>code {
+    white-space: normal; /* TODO: need to make working scroll bars in the PDF */
   }
   .buttonwithCSS {
     font-size: 14px;
   }
-
-  #header {
-    display: none !important;
-  }
-  #footer {
-    display: none !important;
-  }
-  #nav {
-    display: none !important;
-  }
-  body {
-    background-color: --bgColor-default;
-  }
-  .inputDiv {
+  br {
     display: none !important;
   }
 
@@ -204,6 +165,22 @@ body {
     /* break-inside: avoid-region; */
     /* background-color: transparent !important; */
   }
+
+  #header {
+    display: none !important;
+  }
+  #footer {
+    display: none !important;
+  }
+  nav, .navbar, .menu, .sticky-header {
+    display: none !important;
+  }
+  body {
+    background-color: exact !important;
+  }
+  .inputDiv {
+    display: none !important;
+  }
 }
 
 @page {
@@ -213,7 +190,7 @@ body {
   padding-bottom: 0.3in;
   padding-right: 0;
   padding-left: 0;
-  background-color: --bgColor-default;
+  background-color: var(--bgColor-default) !important;
 
 }
 @page :first {
@@ -223,6 +200,6 @@ body {
   padding-bottom: 0.4in;
   padding-right: 0;
   padding-left: 0;
-  background-color: --bgColor-default;
+  background-color: var(--bgColor-default) !important;
 }
 
